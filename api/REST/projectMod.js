@@ -64,4 +64,16 @@ router.delete('/:id', (req, res) => {
 		});
 }); //http://localhost:9000/api/project/1 <== takes an id for the project you want to delete
 //all tested.. all good
+
+router.get('/tasks/:id', (req, res) => {
+	const { id } = req.params;
+	projectDB
+		.getProjectActions(id)
+		.then((stuff) => {
+			res.status(200).json(stuff);
+		})
+		.catch((err) => {
+			res.status(500).json({ message: 'error, you done broke something!!', err });
+		});
+}); //http://localhost:9000/api/project/tasks/1 <==takes in id ==> spits out array of task objects
 module.exports = router;
