@@ -1,4 +1,5 @@
 import React from 'react';
+import Actions from './Actions';
 import Projects from './Projects';
 import axios from 'axios';
 
@@ -33,6 +34,7 @@ class Project extends React.Component {
 		return (
 			<div>
 				<Projects projects={this.state.projects} />
+				<Actions actions={this.state.actions} />
 			</div>
 		);
 	}
