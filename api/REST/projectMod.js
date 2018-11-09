@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
 		.catch((err) => {
 			res.status(500).json({ message: 'error creating that project!!', err });
 		});
-}); //http://localhost:9000/api/project => takes in project_id/description/notes/completed(optional)
+}); //http://localhost:9000/api/project => takes in project_id/description/notes/completed(optional) 😎
 
 router.put('/:id', (req, res) => {
 	const { id } = req.params;
@@ -48,7 +48,7 @@ router.put('/:id', (req, res) => {
 		.catch((err) => {
 			res.status(500).json({ message: 'error updating that project!!', err });
 		});
-}); //http://localhost:9000/api/project/1 <==id ==> takes in project_id/description/notes/completed(optional)
+}); //http://localhost:9000/api/project/1 <==id ==> takes in project_id/description/notes/completed(optional) 😎
 
 router.delete('/:id', (req, res) => {
 	const { id } = req.params;
