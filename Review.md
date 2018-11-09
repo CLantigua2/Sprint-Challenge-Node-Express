@@ -1,8 +1,10 @@
 # Review Questions
 
 ## What is Node.js?
+-NodeJS is a javascript framework that allows the developer to use JavaScript on the backend to create servers.
 
 ## What is Express?
+-Express is a nodeJS library that adds
 
 ## Mention two parts of Express that you learned about this week.
 
