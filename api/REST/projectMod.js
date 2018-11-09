@@ -63,4 +63,5 @@ router.delete('/:id', (req, res) => {
 			res.status(500).json({ message: 'error deleting that project!!', err });
 		});
 }); //http://localhost:9000/api/project/1 <== takes an id for the project you want to delete
+//all tested.. all good
 module.exports = router;
