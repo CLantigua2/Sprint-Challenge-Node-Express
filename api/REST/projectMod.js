@@ -1,5 +1,6 @@
 const express = require('express');
 const projectDB = require('../../data/helpers/projectModel');
+const actionDB = require('../../data/helpers/actionModel');
 
 const router = express.Router();
 
@@ -25,14 +26,19 @@ router.get('/:id', (req, res) => {
 }); //http://localhost:9000/api/project/1 <== takes id
 
 router.post('/', (req, res) => {
-	projectDB
-		.insert(req.body)
-		.then((project) => {
-			res.status(201).json(project);
-		})
-		.catch((err) => {
-			res.status(500).json({ message: 'error creating that project!!', err });
-		});
+	const { project_id, description, notes } = req.body;
+	if (!project_id || !description || !notes) {
+		res.status(400).json({ message: 'Must provide the project id, description and note.' });
+	} else {
+		projectDB
+			.insert(req.body)
+			.then((project) => {
+				res.status(201).json(project);
+			})
+			.catch((err) => {
+				res.status(500).json({ message: 'error creating that project!!', err });
+			});
+	}
 }); //http://localhost:9000/api/project => takes in project_id/description/notes/completed(optional) 😎
 
 router.put('/:id', (req, res) => {
